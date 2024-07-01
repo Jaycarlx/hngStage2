@@ -1,0 +1,102 @@
+:root {
+    --background-color: #121212;
+    --primary-color: #ff5521;
+    --secondary-color: #535353;
+    --text-color: #FFFFFF;
+    --link-color: #ff8521;
+    --header-background: #1F1F1F;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--header-background);
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+#profile{
+    display: flex;
+    justify-content: space-between; /* Distribute items with maximum space between them */
+    align-items: center;         /* Center items vertically */    
+}
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+}
+
+section h2 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin: 10px 0;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Add smooth transitions */
+a, button, img {
+    transition: all 0.3s ease;
+}
+
+/* Add hover effects for links */
+a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Add hover effects for profile image */
+img:hover {
+    transform: scale(1.05);
+    border: 2px solid var(--primary-color);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+}
+
+@media (max-width: 600px) {
+    header, section {
+        padding: 10px;
+        margin: 10px;
+    }
+    #profile{
+        display: block;
+    }
+    header h1 {
+        font-size: 1.5rem;
+    }
+}
