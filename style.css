@@ -30,11 +30,6 @@ header h1 {
     color: var(--primary-color);
     font-size: 2rem;
 }
-#profile{
-    display: flex;
-    justify-content: space-between; /* Distribute items with maximum space between them */
-    align-items: center;         /* Center items vertically */    
-}
 section {
     margin: 20px;
     padding: 20px;
