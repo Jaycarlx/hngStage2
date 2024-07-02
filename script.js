@@ -1,14 +1,20 @@
-document.addEventListener('DOMContentLoaded', function() {
-    function updateTimeAndDay() {
-        const now = new Date();
-        const options = { timeZone: 'Africa/Lagos', hour12: false };
-        const localTime = now.toLocaleTimeString('en-US', options);
-        const dayOfWeek = now.toLocaleString('en-us', { weekday: 'long' });
+document.addEventListener('DOMContentLoaded', function() { 
+    function updateTime() { 
+        const currentTimeUTC = document.querySelector('[data-testid="currentTimeUTC"]'); 
+        const currentDay = document.querySelector('[data-testid="currentDay"]'); 
 
-        document.getElementById('current-time').textContent = localTime;
-        document.getElementById('current-day').textContent = dayOfWeek;
-    }
+        const now = new Date(); 
+        const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]; 
+        const dayName = dayNames[now.getUTCDay()]; 
 
-    updateTimeAndDay(); // Initial call to set the time and day immediately
-    setInterval(updateTimeAndDay, 1000); // Update every second
+        const utcHours = now.getUTCHours().toString().padStart(2, '0');
+        const utcMinutes = now.getUTCMinutes().toString().padStart(2, '0');
+        const utcSeconds = now.getUTCSeconds().toString().padStart(2, '0');
+
+        currentTimeUTC.textContent = `Current Time (UTC): ${utcHours}:${utcMinutes}:${utcSeconds}`; 
+        currentDay.textContent = `Current Day: ${dayName}`; 
+    } 
+
+    updateTime(); 
+    setInterval(updateTime, 1000); 
 });
