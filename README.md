@@ -1,2 +1,2 @@
 # hngStage2
-Stage II for HNG11 intership (FE track)
+Stage I for HNG11 intership (FE track)
